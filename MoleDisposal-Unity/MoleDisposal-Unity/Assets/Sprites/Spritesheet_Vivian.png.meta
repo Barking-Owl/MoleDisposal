@@ -1,12 +1,222 @@
 fileFormatVersion: 2
 guid: b650e69d9b70b4b42a6062c5dfc43cab
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8792783543263616826
+    second: Vivian_Idle
+  - first:
+      213: 3466574686935391433
+    second: Spritesheet_Vivian_7
+  - first:
+      213: -2714695657198879469
+    second: Vivian_IdleBack
+  - first:
+      213: 1522052944442032206
+    second: Vivian_IdleFront
+  - first:
+      213: 1994578995212902558
+    second: Vivian_Walk1
+  - first:
+      213: 642210412707330853
+    second: Vivian_Walk2
+  - first:
+      213: -445602749088032606
+    second: Vivian_Walk3
+  - first:
+      213: 6570573174717517967
+    second: Vivian_Walk4
+  - first:
+      213: 7211255606121047681
+    second: Vivian_Walk5
+  - first:
+      213: -92721898868720530
+    second: Vivian_Walk6
+  - first:
+      213: 8875283301495638478
+    second: Vivian_Walk7
+  - first:
+      213: 7379782305480840646
+    second: Vivian_Walk8
+  - first:
+      213: 4662018294789807962
+    second: Vivian_WalkBack1
+  - first:
+      213: -3196701485222755943
+    second: Vivian_WalkBack2
+  - first:
+      213: -8086132678911953760
+    second: Vivian_WalkBack3
+  - first:
+      213: 151430146921830696
+    second: Vivian_WalkBack4
+  - first:
+      213: -290703072784531401
+    second: Vivian_WalkBack5
+  - first:
+      213: -7582541893304390006
+    second: Vivian_WalkBack6
+  - first:
+      213: 6245025410832137343
+    second: Vivian_WalkBack7
+  - first:
+      213: -3817700372927981513
+    second: Vivian_WalkBack8
+  - first:
+      213: -3588123410345598829
+    second: Vivian_WalkFront1
+  - first:
+      213: -1594215300761274311
+    second: Vivian_WalkFront2
+  - first:
+      213: 9208717506097339498
+    second: Vivian_WalkFront3
+  - first:
+      213: 3703629760631915256
+    second: Vivian_WalkFront4
+  - first:
+      213: 3322683757505941844
+    second: Vivian_WalkFront5
+  - first:
+      213: -3170435561875335542
+    second: Vivian_WalkFront6
+  - first:
+      213: -8374115233876798
+    second: Vivian_WalkFront7
+  - first:
+      213: 4625292441236245236
+    second: Vivian_WalkFront8
+  - first:
+      213: 6889916341699747612
+    second: Vivian_Melee5
+  - first:
+      213: -1579553475526129757
+    second: Vivian_Melee6
+  - first:
+      213: 5319092404853515324
+    second: Vivian_Melee1
+  - first:
+      213: -3950542123008227124
+    second: Vivian_Melee2
+  - first:
+      213: 2128045591817717888
+    second: Vivian_Melee3
+  - first:
+      213: 2885179176781392337
+    second: Vivian_Melee4
+  - first:
+      213: 2424597883178426762
+    second: Vivian_Melee7
+  - first:
+      213: 2758249886666880055
+    second: Vivian_Melee8
+  - first:
+      213: -3904573003000656508
+    second: Vivian_Melee9
+  - first:
+      213: -4443283032948867646
+    second: Vivian_Melee10
+  - first:
+      213: -8370429016434144058
+    second: Vivian_Melee11
+  - first:
+      213: -4242960070623347277
+    second: Vivian_MeleeBack1
+  - first:
+      213: -9045630943455870803
+    second: Vivian_MeleeBack2
+  - first:
+      213: -1228971422856853097
+    second: Vivian_MeleeBack3
+  - first:
+      213: 8662131659488514169
+    second: Vivian_MeleeBack4
+  - first:
+      213: -1581734101482687037
+    second: Vivian_MeleeBack5
+  - first:
+      213: -3357040394729454914
+    second: Vivian_MeleeBack6
+  - first:
+      213: 3895637942655789421
+    second: Vivian_MeleeBack7
+  - first:
+      213: 8750073364144921972
+    second: Vivian_MeleeBack8
+  - first:
+      213: -584977988396515724
+    second: Vivian_MeleeBack9
+  - first:
+      213: 5407189133872583187
+    second: Vivian_MeleeBack10
+  - first:
+      213: 2558713673729732014
+    second: Vivian_MeleeBack11
+  - first:
+      213: 4572442710335529743
+    second: Vivian_MeleeFront1
+  - first:
+      213: -4544549317083054086
+    second: Vivian_MeleeFront2
+  - first:
+      213: 5912430601698839592
+    second: Vivian_MeleeFront3
+  - first:
+      213: 1696805749240035026
+    second: Vivian_MeleeFront4
+  - first:
+      213: -6005879924830064654
+    second: Vivian_MeleeFront5
+  - first:
+      213: -7055368261924915883
+    second: Vivian_MeleeFront6
+  - first:
+      213: 4787268479735832588
+    second: Vivian_MeleeFront7
+  - first:
+      213: -6726744396226644816
+    second: Vivian_MeleeFront8
+  - first:
+      213: -4815589032780046513
+    second: Vivian_MeleeFront9
+  - first:
+      213: -5799372111223401864
+    second: Vivian_MeleeFront10
+  - first:
+      213: -4964173573707015355
+    second: Vivian_MeleeFront11
+  - first:
+      213: -8779523797784589866
+    second: Vivian_Win1
+  - first:
+      213: 7385323456300159498
+    second: Vivian_Win2
+  - first:
+      213: 62736733646260534
+    second: Vivian_Win3
+  - first:
+      213: 4136948107891879764
+    second: Vivian_Win4
+  - first:
+      213: 1942669751495011279
+    second: Vivian_Win5
+  - first:
+      213: 9191363998926085602
+    second: Vivian_Lose1
+  - first:
+      213: -7821689582400391879
+    second: Vivian_Lose2
+  - first:
+      213: 3612291223564185823
+    second: Vivian_Lose3
+  - first:
+      213: 3876214542027010330
+    second: Vivian_Lose4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -32,16 +242,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
-  nPOTScale: 1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -50,9 +260,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -65,10 +275,22 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,11 +299,1460 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Vivian_Idle
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 401
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fd023eb0e360a70800000000000000
+      internalID: 8792783543263616826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_IdleBack
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 401
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31d7d5fcea6735ad0800000000000000
+      internalID: -2714695657198879469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_IdleFront
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 401
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e400ecab61b6f1510800000000000000
+      internalID: 1522052944442032206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Walk1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 352
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90ee16470b2eab10800000000000000
+      internalID: 1994578995212902558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Walk2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 352
+        width: 16
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b3a70c7f699e800800000000000000
+      internalID: 642210412707330853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Walk3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 352
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a89bad19a6e0d9f0800000000000000
+      internalID: -445602749088032606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Walk4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 352
+        width: 16
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f809fb17d7d5f2b50800000000000000
+      internalID: 6570573174717517967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Walk5
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 352
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 186a36354c6831460800000000000000
+      internalID: 7211255606121047681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Walk6
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 352
+        width: 16
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6cb70b9ce596bef0800000000000000
+      internalID: -92721898868720530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Walk7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 352
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec98a92b3275b2b70800000000000000
+      internalID: 8875283301495638478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Walk8
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 352
+        width: 16
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c516e538e04a6660800000000000000
+      internalID: 7379782305480840646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkBack1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 314
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5f915d40f0d2b040800000000000000
+      internalID: 4662018294789807962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkBack2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 314
+        width: 14
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9918550afe803a3d0800000000000000
+      internalID: -3196701485222755943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkBack3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 314
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a476c2bb2948cf80800000000000000
+      internalID: -8086132678911953760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkBack4
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 314
+        width: 14
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8299f839aecf91200800000000000000
+      internalID: 151430146921830696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkBack5
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 314
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7304093781737fbf0800000000000000
+      internalID: -290703072784531401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkBack6
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 314
+        width: 14
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ee213725665c690800000000000000
+      internalID: -7582541893304390006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkBack7
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 314
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7cffe90689caa650800000000000000
+      internalID: 6245025410832137343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkBack8
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 314
+        width: 14
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73850c4ecbdc40bc0800000000000000
+      internalID: -3817700372927981513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkFront1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 275
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390661cd4cc643ec0800000000000000
+      internalID: -3588123410345598829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkFront2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 275
+        width: 14
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938b1a661a530e9e0800000000000000
+      internalID: -1594215300761274311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkFront3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 275
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c5adb28cfebcf70800000000000000
+      internalID: 9208717506097339498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkFront4
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 275
+        width: 14
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2c70605afe56330800000000000000
+      internalID: 3703629760631915256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkFront5
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 275
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4511a1be54b8c1e20800000000000000
+      internalID: 3322683757505941844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkFront6
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 275
+        width: 14
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86972777a95004d0800000000000000
+      internalID: -3170435561875335542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkFront7
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 275
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c43d2c59cf32eff0800000000000000
+      internalID: -8374115233876798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_WalkFront8
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 275
+        width: 14
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa8f2e28f6503040800000000000000
+      internalID: 4625292441236245236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee5
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 224
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f1c2f8866ed9f50800000000000000
+      internalID: 6889916341699747612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee6
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 224
+        width: 25
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7088b9b7c441ae0800000000000000
+      internalID: -1579553475526129757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 224
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34a5c64c5631d940800000000000000
+      internalID: 5319092404853515324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 224
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc880e7bedadc29c0800000000000000
+      internalID: -3950542123008227124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 224
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088812ed036588d10800000000000000
+      internalID: 2128045591817717888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee4
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 224
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9a869cc273a0820800000000000000
+      internalID: 2885179176781392337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 224
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81a30ebde6e5a120800000000000000
+      internalID: 2424597883178426762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee8
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 224
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7347a8878a5474620800000000000000
+      internalID: 2758249886666880055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee9
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 224
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48dc0948a8b20d9c0800000000000000
+      internalID: -3904573003000656508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee10
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 224
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdff808f994652c0800000000000000
+      internalID: -4443283032948867646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Melee11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 224
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc02d1782346db80800000000000000
+      internalID: -8370429016434144058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 171
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd3452cb4afd15c0800000000000000
+      internalID: -4242960070623347277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 171
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0080e2596777280800000000000000
+      internalID: -9045630943455870803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 171
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799c2859001d1fee0800000000000000
+      internalID: -1228971422856853097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack4
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 171
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9705a71b9d2163870800000000000000
+      internalID: 8662131659488514169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack5
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 171
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5b000173d8c0ae0800000000000000
+      internalID: -1581734101482687037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack6
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 171
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2838f1c856961d0800000000000000
+      internalID: -3357040394729454914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack7
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 171
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d692881a116101630800000000000000
+      internalID: 3895637942655789421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack8
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 171
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d17746d518e6970800000000000000
+      internalID: 8750073364144921972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack9
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 171
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ef3307e9db1e7f0800000000000000
+      internalID: -584977988396515724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack10
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 171
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312d3d56ed13a0b40800000000000000
+      internalID: 5407189133872583187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeBack11
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 171
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead68949780628320800000000000000
+      internalID: 2558713673729732014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 119
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03af515b64947f30800000000000000
+      internalID: 4572442710335529743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 118
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff350369748ee0c0800000000000000
+      internalID: -4544549317083054086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 118
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c886d8e4c2d0250800000000000000
+      internalID: 5912430601698839592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront4
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 118
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6fa40c6d34c8710800000000000000
+      internalID: 1696805749240035026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 118
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ffaad46704d6aca0800000000000000
+      internalID: -6005879924830064654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront6
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 118
+        width: 14
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555766c52fb461e90800000000000000
+      internalID: -7055368261924915883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront7
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 113
+        width: 14
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00241b715bcf6240800000000000000
+      internalID: 4787268479735832588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront8
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 110
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4bf088c9dc5a2a0800000000000000
+      internalID: -6726744396226644816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 113
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fd0ece9479b2db0800000000000000
+      internalID: -4815589032780046513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront10
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 115
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872d83e8acd748fa0800000000000000
+      internalID: -5799372111223401864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_MeleeFront11
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 118
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54bdfcf9f66bb1bb0800000000000000
+      internalID: -4964173573707015355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Win1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 58
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d906ff2f9dd82680800000000000000
+      internalID: -8779523797784589866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Win2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 58
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02912ced80fd7660800000000000000
+      internalID: 7385323456300159498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Win3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 58
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6398a531ab2eed000800000000000000
+      internalID: 62736733646260534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Win4
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 58
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fae19b264696930800000000000000
+      internalID: 4136948107891879764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Win5
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 58
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcba1c5a8dfb5fa10800000000000000
+      internalID: 1942669751495011279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Lose1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 10
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed9d4debd84e8f70800000000000000
+      internalID: 9191363998926085602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Lose2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 10
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935b6a114c6c37390800000000000000
+      internalID: -7821689582400391879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Lose3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 10
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd0fdc5aabf612230800000000000000
+      internalID: 3612291223564185823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vivian_Lose4
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 10
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1139b2c6941bc530800000000000000
+      internalID: 3876214542027010330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
