@@ -27,11 +27,11 @@ public class GameManager : MonoBehaviour
     //Check to make sure only one gm of the GameManager is in the scene
     void CheckGameManagerIsInScene()
     {
-    
+
         //Check if instnace is null
         if (gm == null)
         {
-           gm = this; //set gm to this gm of the game object
+            gm = this; //set gm to this gm of the game object
             Debug.Log(gm);
         }
         else //else if gm is not null a Game Manager must already exsist
@@ -45,30 +45,20 @@ public class GameManager : MonoBehaviour
 
     [Header("GENERAL SETTINGS")]
     public string gameTitle = "Mole Disposal";  //name of the game
-    public string gameCredits = "Made by Andrew Nguyen. Credit for template goes to Professor Akram."; //game creator(s)
+    public string gameCredits = "Made by Andrew Nguyen."; //game creator(s)
     public string copyrightDate = "Copyright " + thisDay; //date cretaed
-    public int time; //Time. This is set dynamically
+    public int time = 30; //Time. This is set dynamically, but that feature may be cut. By default it's 30
+    public bool sequencing = false; //This is so the player can't move when the moles are beeping the sequence. By default should be aflse
+    public GameObject[] moleArray; //Each of the eight moles will be loaded into this array
+    public GameObject[] playerHits; //The player's hits
 
     [Header("GAME SETTINGS")]
 
-    [Tooltip("Will the high score be recoreded")]
-    public bool recordHighScore = false; //is the High Score recorded
-
-    [SerializeField] //Access to private variables in editor
-    private int defaultHighScore = 1000;
-    static public int highScore = 1000; // the default High Score
-    public int HighScore { get { return highScore; } set { highScore = value; } }//access to private variable highScore [get/set methods]
-
-    [Space(10)]
-    
     //static vairables can not be updated in the inspector, however private serialized fileds can be
     [SerializeField] //Access to private variables in editor
     private int numberOfLives; //set number of lives in the inspector
     static public int lives; // number of lives for player 
     public int Lives { get { return lives; } set { lives = value; } }//access to private variable died [get/set methods]
-
-    static public int score;  //score value
-    public int Score { get { return score; } set { score = value; } }//access to private variable died [get/set methods]
 
     [SerializeField] //Access to private variables in editor
     [Tooltip("Check to test player lost the level")]
@@ -77,23 +67,23 @@ public class GameManager : MonoBehaviour
 
     [Space(10)]
     public string defaultEndMessage = "Game Over";//the end screen message, depends on winning outcome
-    public string looseMessage = "You Loose"; //Message if player looses
-    public string winMessage = "You Win"; //Message if player wins
-    [HideInInspector] public string endMsg ;//the end screen message, depends on winning outcome
+    public string looseMessage = "Oh no..."; //Message if player looses
+    public string winMessage = "Right on!"; //Message if player wins
+    [HideInInspector] public string endMsg;//the end screen message, depends on winning outcome
 
     [Header("SCENE SETTINGS")]
     [Tooltip("Name of the start scene")]
     public string startScene;
-    
+
     [Tooltip("Name of the game over scene")]
     public string gameOverScene;
-    
+
     [Tooltip("Count and name of each Game Level (scene)")]
     public string[] gameLevels; //names of levels
     [HideInInspector]
     public int gameLevelsCount; //what level we are on
     private int loadLevel; //what level from the array to load
-     
+
     public static string currentSceneName; //the current scene name;
 
     [Header("FOR TESTING")]
@@ -110,14 +100,14 @@ public class GameManager : MonoBehaviour
     //Win/Loose conditon
     [SerializeField] //to test in inspector
     private bool playerWon = false;
- 
-   //reference to system time
-   private static string thisDay = System.DateTime.Now.ToString("yyyy"); //today's date as string
+
+    //reference to system time
+    private static string thisDay = System.DateTime.Now.ToString("yyyy"); //today's date as string
 
 
     /*** METHODS ***/
-   
-   //Awake is called when the game loads (before Start).  Awake only once during the lifetime of the script instance.
+
+    //Awake is called when the game loads (before Start).  Awake only once during the lifetime of the script instance.
     void Awake()
     {
         //runs the method to check for the GameManager
@@ -125,9 +115,7 @@ public class GameManager : MonoBehaviour
 
         //store the current scene
         currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        
-        //Get the saved high score
-        GetHighScore();
+
 
     }//end Awake()
 
@@ -137,7 +125,13 @@ public class GameManager : MonoBehaviour
     {
         //if ESC is pressed , exit game
         if (Input.GetKey("escape")) { ExitGame(); }
-        
+
+        //If Time is up. Just to check timer and update it
+        TimeCheck();
+
+        //Check if player's hit moles match
+        checkMoles();
+
         //Check for next level
         if (nextLevel) { NextLevel(); }
 
@@ -149,14 +143,12 @@ public class GameManager : MonoBehaviour
 
         }//end if (gameState == gameStates.Playing)
 
-        //Check Score
-        CheckScore();
 
     }//end Update
 
 
     //LOAD THE GAME FOR THE FIRST TIME OR RESTART
-   public void StartGame()
+    public void StartGame()
     {
         //SET ALL GAME LEVEL VARIABLES FOR START OF GAME
 
@@ -167,25 +159,40 @@ public class GameManager : MonoBehaviour
         gameState = gameStates.Playing; //set the game state to playing
 
         lives = numberOfLives; //set the number of lives
-        score = 0; //set starting score
-
-        //set High Score
-        if (recordHighScore) //if we are recording highscore
-        {
-            //if the high score, is less than the default high score
-            if (highScore <= defaultHighScore)
-            {
-                highScore = defaultHighScore; //set the high score to defulat
-                PlayerPrefs.SetInt("HighScore", highScore); //update high score PlayerPref
-            }//end if (highScore <= defaultHighScore)
-        }//end  if (recordHighScore) 
 
         endMsg = defaultEndMessage; //set the end message default
 
         playerWon = false; //set player winning condition to false
     }//end StartGame()
 
+    public void initializeMoles()
+    {
+        sequencing = true;
+        //Do a for loop through the Mole Holes and assign each a random index 
+        //for (mole, moleArray)
+        //{
 
+        //}
+    } //end initializeMoles()
+
+    //Another method, but this time for the player's hits
+    //public void playerHits()
+    //{
+
+    //}
+
+    //Check if the contents of playerHits matches that of the first moles
+    public void checkMoles()
+    {
+        //Loop thru each item in the array, if there is a mismatch break the loop player loses (restarts) level and loses a life (listed as an attempt)
+        //An incomplete array would still be a mismatch?
+        //Or only check it after finish?
+        if (playerHits != moleArray) 
+        {
+            playerWon = false;
+            GameOver();
+        } 
+    }
 
     //EXIT THE GAME
     public void ExitGame()
@@ -208,7 +215,7 @@ public class GameManager : MonoBehaviour
     
     
     //GO TO THE NEXT LEVEL
-        void NextLevel()
+    void NextLevel()
     {
         nextLevel = false; //reset the next level
 
@@ -225,29 +232,18 @@ public class GameManager : MonoBehaviour
 
     }//end NextLevel()
 
-    void CheckScore()
-    { //This method manages the score on update. Right now it just checks if we are greater than the high score.
-  
-        //if the score is more than the high score
-        if (score > highScore)
-        { 
-            highScore = score; //set the high score to the current score
-           PlayerPrefs.SetInt("HighScore", highScore); //set the playerPref for the high score
-        }//end if(score > highScore)
+    public void TimeCheck()
+    {
+        if (time == 0) {
+            playerWon = false;
+            GameOver();
+        }
+    } //end TimeCheck();
 
-    }//end CheckScore()
-
-    void GetHighScore()
-    {//Get the saved highscore
- 
-        //if the PlayerPref alredy exists for the high score
-        if (PlayerPrefs.HasKey("HighScore"))
-        {
-            Debug.Log("Has Key");
-            highScore = PlayerPrefs.GetInt("HighScore"); //set the high score to the saved high score
-        }//end if (PlayerPrefs.HasKey("HighScore"))
-
-        PlayerPrefs.SetInt("HighScore", highScore); //set the playerPref for the high score
-    }//end GetHighScore()
+    //Static public method to get if the game currently is in sequencing phase
+    public static bool getSequencing()
+    {
+        return gm.sequencing;
+    } //end getSequencing()
 
 }

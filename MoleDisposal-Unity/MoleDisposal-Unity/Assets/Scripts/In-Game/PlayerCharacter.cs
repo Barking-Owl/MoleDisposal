@@ -32,7 +32,6 @@ public class PlayerCharacter : MonoBehaviour
     public Vector2 lastPos;
     public Vector2 playerMovement;
     public Vector3 pos;
-    public bool sequence = false; //When the moles are displaying the sequence. This should be in GameManager or Moles
     public bool canMove;
     static public bool attacking = false; //When PC is attacking with hammer
     private void Awake()
@@ -56,10 +55,10 @@ public class PlayerCharacter : MonoBehaviour
         {
             Debug.Log("Attacking");
             attacking = true;
-            Attack();
+            apc.SetTrigger("Attacking");
         }
 
-        if (attacking == true || sequence == true)
+        if (attacking == true || GameManager.getSequencing())
         {
             canMove = false;
         }
@@ -113,13 +112,14 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Attack()
     {
-        apc.SetBool("isAttacking", attacking);
-        if (apc.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
-        {
-            attacking = false;
-            apc.SetBool("isAttacking", attacking);
-        }
+        
     } //End Attack
+
+    private void EndAttack()
+    {
+        attacking = false;
+        apc.SetBool("isAttacking", attacking);
+    }
 
 
 

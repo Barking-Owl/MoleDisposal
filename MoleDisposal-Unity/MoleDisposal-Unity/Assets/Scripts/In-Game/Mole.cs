@@ -6,8 +6,7 @@
  * Last Edited: Feb 28, 2022
  * 
  * Description: Manages individual moles. Considering they will be generated 
- * Possible to do: The close animation will also be them emerging from the holes, which is the animation in reverse. Could be done via trigger?
- * Same case for the beep as it should only do it once.
+
  * Is levelend instant?
 ****/
 
@@ -20,7 +19,6 @@ public class Mole : MonoBehaviour
 
     //VARIABLES//
     [Header("SET ON AWAKE")]
-    public Rigidbody rb;
     public SpriteRenderer sr;
     public Animator animate;
 
@@ -35,7 +33,6 @@ public class Mole : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         sr = GetComponent<SpriteRenderer>();
         animate = GetComponent<Animator>();
     }
@@ -50,17 +47,18 @@ public class Mole : MonoBehaviour
     {
         if (sequencingTurn)
         {
-            animate.SetBool("sequencing", sequencingTurn);
+            animate.SetTrigger("sequencing 0");
+            sequencingTurn = true;
         }
 
         if (emerge)
         {
-            animate.SetBool("levelStart", emerge);
+            animate.SetTrigger("levelStart");
         }
 
         if (retreat)
         {
-            animate.SetBool("levelEnd", retreat);
+            animate.SetTrigger("levelEnd");
         }
 
     }
@@ -74,13 +72,19 @@ public class Mole : MonoBehaviour
         {
             if (hitCorrect)
             {
-                animate.SetBool("correct", hitCorrect);
+                animate.SetTrigger("correct");
             }
 
             else if (hitIncorrect)
             {
-                animate.SetBool("incorrect", hitIncorrect);
+                animate.SetTrigger("incorrect");
             }
         }
+    }
+
+    private void endSequence ()
+    {
+        sequencingTurn = false;
+        animate.SetBool("sequencing", sequencingTurn);
     }
 }

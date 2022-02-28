@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Feb 27, 2022
+ * Last Edited: Feb 28, 2022
  * 
  * Description: Updates HUD canvas referecing game manager
 ****/
@@ -22,15 +22,13 @@ public class HUDCanvas : MonoBehaviour
     [Header("Canvas SETTINGS")]
     public Text levelTextbox; //textbox for level count
     public Text livesTextbox; //textbox for the lives
-    public Text scoreTextbox; //textbox for the score
-    public Text highScoreTextbox; //textbox for highscore
+    public Text timerTextbox; //textbox for time
     
     //GM Data
     private int level;
     private int totalLevels;
     private int lives;
-    private int score;
-    private int highscore;
+    private int timelimit;
 
     private void Start()
     {
@@ -55,17 +53,15 @@ public class HUDCanvas : MonoBehaviour
     void GetGameStats()
     {
         lives = gm.Lives;
-        score = gm.Score;
-        highscore = gm.HighScore;
+        timelimit = gm.time;
     }
 
     void SetHUD()
     {
         //if texbox exsists update value
-        if (levelTextbox) { levelTextbox.text = "Level " + level + "/" + totalLevels; }
-        if (livesTextbox) { livesTextbox.text = "Attempts " + lives; }
-        if (scoreTextbox) { scoreTextbox.text = "Score " + score; }
-        if (highScoreTextbox) { highScoreTextbox.text = "High Score " + highscore; }
+        if (levelTextbox) { levelTextbox.text = "Level: " + level + "/" + totalLevels; }
+        if (livesTextbox) { livesTextbox.text = "Attempts: " + lives; }
+        if (timerTextbox) { timerTextbox.text = "Time :" + timelimit; }
 
     }//end SetHUD()
 
