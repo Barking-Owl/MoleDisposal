@@ -2,8 +2,8 @@
  * Created by: Akram Taghavi-Burrs
  * Date Created: Feb 23, 2022
  * 
- * Last Edited by: NA
- * Last Edited: Feb 23, 2022
+ * Last Edited by: Andrew Nguyen
+ * Last Edited: Feb 28, 2022
  * 
  * Description: Basic GameManager Template
 ****/
@@ -44,9 +44,10 @@ public class GameManager : MonoBehaviour
     #endregion
 
     [Header("GENERAL SETTINGS")]
-    public string gameTitle = "Untitled Game";  //name of the game
-    public string gameCredits = "Made by Me"; //game creator(s)
+    public string gameTitle = "Mole Disposal";  //name of the game
+    public string gameCredits = "Made by Andrew Nguyen. Credit for template goes to Professor Akram."; //game creator(s)
     public string copyrightDate = "Copyright " + thisDay; //date cretaed
+    public int time; //Time. This is set dynamically
 
     [Header("GAME SETTINGS")]
 
@@ -114,7 +115,7 @@ public class GameManager : MonoBehaviour
    private static string thisDay = System.DateTime.Now.ToString("yyyy"); //today's date as string
 
 
-    /*** MEHTODS ***/
+    /*** METHODS ***/
    
    //Awake is called when the game loads (before Start).  Awake only once during the lifetime of the script instance.
     void Awake()

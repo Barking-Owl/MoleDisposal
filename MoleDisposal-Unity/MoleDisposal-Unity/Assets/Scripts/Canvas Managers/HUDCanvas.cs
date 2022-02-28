@@ -2,8 +2,8 @@
  * Created by: Akram Taghavi-Burrs
  * Date Created: Feb 23, 2022
  * 
- * Last Edited by: NA
- * Last Edited: Feb 23, 2022
+ * Last Edited by: Andrew Nguyen
+ * Last Edited: Feb 27, 2022
  * 
  * Description: Updates HUD canvas referecing game manager
 ****/
@@ -63,7 +63,7 @@ public class HUDCanvas : MonoBehaviour
     {
         //if texbox exsists update value
         if (levelTextbox) { levelTextbox.text = "Level " + level + "/" + totalLevels; }
-        if (livesTextbox) { livesTextbox.text = "Lives " + lives; }
+        if (livesTextbox) { livesTextbox.text = "Attempts " + lives; }
         if (scoreTextbox) { scoreTextbox.text = "Score " + score; }
         if (highScoreTextbox) { highScoreTextbox.text = "High Score " + highscore; }
 
