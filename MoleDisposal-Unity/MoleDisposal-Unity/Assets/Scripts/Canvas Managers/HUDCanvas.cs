@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 1, 2022
+ * Last Edited: Mar 2, 2022
  * 
  * Description: Updates HUD canvas referecing game manager
 ****/

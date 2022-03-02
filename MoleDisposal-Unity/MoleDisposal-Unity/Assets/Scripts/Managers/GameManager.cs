@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 1, 2022
+ * Last Edited: Mar 2, 2022
  * 
  * Description: Basic GameManager Template
 ****/
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     [Header("GENERAL SETTINGS")]
     public string gameTitle = "Mole Disposal";  //name of the game
-    public string gameCredits = "Made by Andrew Nguyen."; //game creator(s)
+    public string gameCredit = "Made by: Andrew Nguyen"; //Game creator
     public string copyrightDate = "Copyright " + thisDay; //date cretaed
     public float time = 30.0f; //Time. This is set dynamically, but that feature may be cut. By default it's 30
     public bool sequencing = false; //This is so the player can't move when the moles are beeping the sequence. By default should be aflse
@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
 
         //store the current scene
         currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-
+        Debug.Log(gameCredit);
 
     }//end Awake()
 
@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
         //If Time is up. Just to check timer and update it. SHOULD ONLY COUNT DOWN ONCE GAME STARTED/IS IN LEVEl
         if (gameStarted) { TimeCheck(); }
         
-        //Check if player's hit moles match
+        //Check if player's hit moles match. Alternatively, do this when the player hits the moles and not per frame
         //checkMoles();
 
         //Check for next level
@@ -163,12 +163,39 @@ public class GameManager : MonoBehaviour
         endMsg = defaultEndMessage; //set the end message default
 
         playerWon = false; //set player winning condition to false
+        initializeMoles();
         gameStarted = true; //The timer can start. This also will freeze and reset when the player wins or loses.
+        
     }//end StartGame()
 
+    //If player loses a life but has not lost the game
+    public void LoseALife()
+    {
+        if (lives > 0)
+        {
+            lives--;
+            levelLost = true;
+            SceneManager.LoadScene(gameLevels[loadLevel]);
+            levelLost = false;
+            time = 30.0f; //Reset the timer
+        }
+        else
+        {
+            GameOver();
+        }
+    }
+
+    //Reload the level after playing the lose animation for the PC
+        
     public void initializeMoles()
     {
         sequencing = true;
+        //Moles for moles themselves and MoleHoles for 
+        //For each Mole in the Moles GameObject take them, generate a mole there, give said mole an index, then push it to an array.
+        //Then randomize the order of the array
+        //Then have each of them beep in sequence. Mole will have an event at the end to refer to the nextMole method
+        //In the nextMole method get the next mole in the array, possibly through an int to check the indices
+        //When the last one is done (through a check if) set sequencing to false and the timer may start and the player may move
         //Do a for loop through the Mole Holes and assign each a random index 
         //for (mole, moleArray)
         //{
@@ -183,16 +210,18 @@ public class GameManager : MonoBehaviour
     //}
 
     //Check if the contents of playerHits matches that of the first moles
-    public void checkMoles()
+    public void CheckMoles()
     {
         //Loop thru each item in the array, if there is a mismatch break the loop player loses (restarts) level and loses a life (listed as an attempt)
         //An incomplete array would still be a mismatch?
-        //Or only check it after finish?
-        if (playerHits != moleArray) 
+        //Or only check it after finish? Or, just have it partially check the array
+        for (int i = 0; i < playerHits.Length; i++)
         {
-            playerWon = false;
-            GameOver();
-        } 
+            if (playerHits[i] != moleArray[i]) //Will only go as far as the player has made hits
+            {
+                PlayerCharacter.LoseLevel();
+            }
+        }
     }
 
     //EXIT THE GAME
@@ -240,7 +269,7 @@ public class GameManager : MonoBehaviour
     {
         if (time <= 0) {
             playerWon = false;
-            GameOver();
+            PlayerCharacter.LoseLevel();
         }
         else
         {
@@ -249,16 +278,6 @@ public class GameManager : MonoBehaviour
         }
     } //end TimeCheck();
 
-    //Static public method to get if the game currently is in sequencing phase. MAY NOT BE NEEDED, SO REMOVE
-    public static bool getSequencing()
-    {
-        return gm.sequencing;
-    } //end getSequencing()
 
-    //Static public method to get the time
-    public static float getTime()
-    {
-        return gm.time;
-    } //end getTime()
 
 }

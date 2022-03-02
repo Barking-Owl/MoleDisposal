@@ -2,8 +2,8 @@
  * Created by: Akram Taghavi-Burrs
  * Date Created: Feb 23, 2022
  * 
- * Last Edited by: NA
- * Last Edited: Feb 23, 2022
+ * Last Edited by: Andrew Nguyen
+ * Last Edited: Mar 2, 2022
  * 
  * Description: Updates start canvas referecing game manager
 ****/
@@ -30,7 +30,7 @@ public class StartCanvas : MonoBehaviour
          
          //Set the Canvas text from GM reference
          titleTextbox.text = gm.gameTitle; 
-         creditsTextbox.text = gm.gameCredits;
+         creditsTextbox.text = gm.gameCredit;
          copyrightTextbox.text = gm.copyrightDate;
     }
 

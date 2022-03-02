@@ -3,7 +3,7 @@
  * Date Created: Feb 27, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 1, 2022
+ * Last Edited: Mar 2, 2022
  * 
  * Description: Manages Vivian and her hammer
 ****/
@@ -26,7 +26,7 @@ public class PlayerCharacter : MonoBehaviour
     [Header("SET ON AWAKE")]
     public Rigidbody rb;
     public SpriteRenderer sr;
-    public Animator apc;
+    static public Animator apc;
 
     [Header("SET DYNAMICALLY")]
     public Vector2 lastPos;
@@ -76,6 +76,19 @@ public class PlayerCharacter : MonoBehaviour
         apc.SetFloat("WalkingSide", playerMovement.x);
         apc.SetFloat("Speed", playerMovement.magnitude);
     } //End Update
+
+    //We lost the level! Trigger an animation and set a flag to restart in animation (event)
+    static public void LoseLevel()
+    {
+        apc.SetTrigger("Lose");
+    }
+
+    public void LoseReload()
+    {
+        gm.LoseALife();
+    }
+
+    //We won the level! Trigger an animation and set a flag to restart in animation
 
     //Move character
     private void MoveCharacter()
