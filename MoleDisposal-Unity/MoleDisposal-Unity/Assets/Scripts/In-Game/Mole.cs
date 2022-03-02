@@ -3,7 +3,7 @@
  * Date Created: Feb 28, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Feb 28, 2022
+ * Last Edited: Mar 1, 2022
  * 
  * Description: Manages individual moles. Considering they will be generated 
 
@@ -28,7 +28,7 @@ public class Mole : MonoBehaviour
     public bool hitIncorrect;
     public bool emerge;
     public bool retreat;
-    public bool sequencingTurn;
+    public bool sequencingTurn; //This is in addition to a trigger, so the Mole can go to the idle animation properly
 
 
     private void Awake()
@@ -48,7 +48,7 @@ public class Mole : MonoBehaviour
         if (sequencingTurn)
         {
             animate.SetTrigger("sequencing 0");
-            sequencingTurn = true;
+            sequencingTurn = true; //Mole has event to go straight to idle 
         }
 
         if (emerge)
@@ -70,6 +70,7 @@ public class Mole : MonoBehaviour
         GameObject collidedWith = col.gameObject;
         if (collidedWith.tag == "Player" && PlayerCharacter.attacking == true) 
         {
+            Debug.Log("Vivian hit the Mole");
             if (hitCorrect)
             {
                 animate.SetTrigger("correct");
@@ -85,6 +86,6 @@ public class Mole : MonoBehaviour
     private void endSequence ()
     {
         sequencingTurn = false;
-        animate.SetBool("sequencing", sequencingTurn);
+        animate.SetBool("sequencing", sequencingTurn); //To transition to idle
     }
 }

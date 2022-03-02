@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Feb 28, 2022
+ * Last Edited: Mar 1, 2022
  * 
  * Description: Updates HUD canvas referecing game manager
 ****/
@@ -28,15 +28,17 @@ public class HUDCanvas : MonoBehaviour
     private int level;
     private int totalLevels;
     private int lives;
-    private int timelimit;
+    private float timelimit;
 
     private void Start()
     {
         gm = GameManager.GM; //find the game manager
 
-        //reference to levle info
+        //reference to level info
         level = gm.gameLevelsCount;
         totalLevels = gm.gameLevels.Length;
+        timelimit = gm.time;
+        DisplayTime();
 
 
 
@@ -47,7 +49,9 @@ public class HUDCanvas : MonoBehaviour
     void Update()
     {
         GetGameStats();
+        DisplayTime();
         SetHUD();
+
     }//end Update()
 
     void GetGameStats()
@@ -65,4 +69,8 @@ public class HUDCanvas : MonoBehaviour
 
     }//end SetHUD()
 
+    void DisplayTime()
+    {
+        timelimit = Mathf.FloorToInt(timelimit % 60);
+    }
 }

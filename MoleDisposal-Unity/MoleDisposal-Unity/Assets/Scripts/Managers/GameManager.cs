@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Feb 28, 2022
+ * Last Edited: Mar 1, 2022
  * 
  * Description: Basic GameManager Template
 ****/
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     public string gameTitle = "Mole Disposal";  //name of the game
     public string gameCredits = "Made by Andrew Nguyen."; //game creator(s)
     public string copyrightDate = "Copyright " + thisDay; //date cretaed
-    public int time = 30; //Time. This is set dynamically, but that feature may be cut. By default it's 30
+    public float time = 30.0f; //Time. This is set dynamically, but that feature may be cut. By default it's 30
     public bool sequencing = false; //This is so the player can't move when the moles are beeping the sequence. By default should be aflse
     public GameObject[] moleArray; //Each of the eight moles will be loaded into this array
     public GameObject[] playerHits; //The player's hits
@@ -126,11 +126,11 @@ public class GameManager : MonoBehaviour
         //if ESC is pressed , exit game
         if (Input.GetKey("escape")) { ExitGame(); }
 
-        //If Time is up. Just to check timer and update it
-        TimeCheck();
-
+        //If Time is up. Just to check timer and update it. SHOULD ONLY COUNT DOWN ONCE GAME STARTED/IS IN LEVEl
+        if (gameStarted) { TimeCheck(); }
+        
         //Check if player's hit moles match
-        checkMoles();
+        //checkMoles();
 
         //Check for next level
         if (nextLevel) { NextLevel(); }
@@ -163,6 +163,7 @@ public class GameManager : MonoBehaviour
         endMsg = defaultEndMessage; //set the end message default
 
         playerWon = false; //set player winning condition to false
+        gameStarted = true; //The timer can start. This also will freeze and reset when the player wins or loses.
     }//end StartGame()
 
     public void initializeMoles()
@@ -205,6 +206,8 @@ public class GameManager : MonoBehaviour
     //GO TO THE GAME OVER SCENE
     public void GameOver()
     {
+        gameStarted = false;
+        time = 30.0f;
         gameState = gameStates.GameOver; //set the game state to gameOver
 
        if(playerWon) { endMsg = winMessage; } else { endMsg = looseMessage; } //set the end message
@@ -225,6 +228,7 @@ public class GameManager : MonoBehaviour
             gameLevelsCount++; //add to level count for next level
             loadLevel = gameLevelsCount - 1; //find the next level in the array
             SceneManager.LoadScene(gameLevels[loadLevel]); //load next level
+            time = 30.0f; //Reset the timer
 
         }else{ //if we have run out of levels go to game over
             GameOver();
@@ -234,16 +238,27 @@ public class GameManager : MonoBehaviour
 
     public void TimeCheck()
     {
-        if (time == 0) {
+        if (time <= 0) {
             playerWon = false;
             GameOver();
         }
+        else
+        {
+            time -= Time.deltaTime;
+            Debug.Log(time);
+        }
     } //end TimeCheck();
 
-    //Static public method to get if the game currently is in sequencing phase
+    //Static public method to get if the game currently is in sequencing phase. MAY NOT BE NEEDED, SO REMOVE
     public static bool getSequencing()
     {
         return gm.sequencing;
     } //end getSequencing()
+
+    //Static public method to get the time
+    public static float getTime()
+    {
+        return gm.time;
+    } //end getTime()
 
 }

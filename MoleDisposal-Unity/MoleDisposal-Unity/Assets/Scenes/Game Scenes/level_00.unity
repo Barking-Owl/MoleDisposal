@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427147, b: 0.56452364, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -636,7 +636,6 @@ MonoBehaviour:
   lastPos: {x: 0, y: 0}
   playerMovement: {x: 0, y: 0}
   pos: {x: 0, y: 0, z: 0}
-  sequence: 0
   canMove: 0
 --- !u!95 &509039688
 Animator:
@@ -1116,8 +1115,9 @@ MonoBehaviour:
   gameCredits: Made by Me
   copyrightDate: Copyright 2022
   time: 0
-  recordHighScore: 1
-  defaultHighScore: 1000
+  sequencing: 0
+  moleArray: []
+  playerHits: []
   numberOfLives: 0
   levelLost: 0
   defaultEndMessage: Game Over
@@ -1389,8 +1389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTextbox: {fileID: 699224402}
   livesTextbox: {fileID: 316761860}
-  scoreTextbox: {fileID: 0}
-  highScoreTextbox: {fileID: 0}
+  timerTextbox: {fileID: 1514369778}
 --- !u!114 &1223651263
 MonoBehaviour:
   m_ObjectHideFlags: 0

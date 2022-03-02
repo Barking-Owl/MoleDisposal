@@ -3,7 +3,7 @@
  * Date Created: Feb 27, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Feb 27, 2022
+ * Last Edited: Mar 1, 2022
  * 
  * Description: Manages Vivian and her hammer
 ****/
@@ -16,9 +16,9 @@ public class PlayerCharacter : MonoBehaviour
 
     //Singleton
 
-    static private PlayerCharacter P;
-
     //VARIABLES//
+
+    GameManager gm; //reference to game manager
 
     [Header("SET IN INSPECTOR")]
     public float speed = 2f; //Do not raise to 5 (original value). High number will cause it to clip through due to use of transform
@@ -36,7 +36,7 @@ public class PlayerCharacter : MonoBehaviour
     static public bool attacking = false; //When PC is attacking with hammer
     private void Awake()
     {
-        P = this;
+        //P = this;
         rb = GetComponent<Rigidbody>();
         sr = GetComponent<SpriteRenderer>();
         apc = GetComponent<Animator>();
@@ -45,7 +45,7 @@ public class PlayerCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = GameManager.GM; //find the game manager
     } //End Start
 
     // Update is called once per frame
@@ -58,7 +58,7 @@ public class PlayerCharacter : MonoBehaviour
             apc.SetTrigger("Attacking");
         }
 
-        if (attacking == true || GameManager.getSequencing())
+        if (attacking == true || gm.sequencing == true)
         {
             canMove = false;
         }
