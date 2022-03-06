@@ -7,7 +7,7 @@
  * 
  * Description: Manages individual moles. Considering they will be generated 
 
- * Is levelend instant?
+ * 
 ****/
 
 using System.Collections;
@@ -87,5 +87,10 @@ public class Mole : MonoBehaviour
     {
         sequencingTurn = false;
         animate.SetBool("sequencing", sequencingTurn); //To transition to idle
+    }
+
+    public void SetAnimate()
+    {
+        sequencingTurn = true;
     }
 }

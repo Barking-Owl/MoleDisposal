@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 2, 2022
+ * Last Edited: Mar 5, 2022
  * 
  * Description: Basic GameManager Template
 ****/
@@ -47,13 +47,14 @@ public class GameManager : MonoBehaviour
     public string gameTitle = "Mole Disposal";  //name of the game
     public string gameCredit = "Made by: Andrew Nguyen"; //Game creator
     public string copyrightDate = "Copyright " + thisDay; //date cretaed
-    public float time = 30.0f; //Time. This is set dynamically, but that feature may be cut. By default it's 30
-    public bool sequencing = false; //This is so the player can't move when the moles are beeping the sequence. By default should be aflse
-    public GameObject[] moleArray; //Each of the eight moles will be loaded into this array
-    public GameObject[] playerHits; //The player's hits
+    public GameObject mole;
+    public float time = 30.0f; //Time. This is set dynamically at least on initial concept doc, but that feature may be cut. By default it's 30
+    public List<GameObject> moles; 
+    public List<GameObject> playerHits; //The player's hits
 
     [Header("GAME SETTINGS")]
 
+    public bool sequencing = false; //This is so the player can't move when the moles are beeping the sequence. By default should be aflse
     //static vairables can not be updated in the inspector, however private serialized fileds can be
     [SerializeField] //Access to private variables in editor
     private int numberOfLives; //set number of lives in the inspector
@@ -117,8 +118,10 @@ public class GameManager : MonoBehaviour
         currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         Debug.Log(gameCredit);
 
+        moles = new List<GameObject>();
+        playerHits = new List<GameObject>();
+        
     }//end Awake()
-
 
     // Update is called once per frame
     private void Update()
@@ -163,12 +166,13 @@ public class GameManager : MonoBehaviour
         endMsg = defaultEndMessage; //set the end message default
 
         playerWon = false; //set player winning condition to false
+        Debug.Log("Game started");
         initializeMoles();
         gameStarted = true; //The timer can start. This also will freeze and reset when the player wins or loses.
         
     }//end StartGame()
 
-    //If player loses a life but has not lost the game
+    //If player loses a life but has not lost the game. Reload the level after playing the lose animation for the PC
     public void LoseALife()
     {
         if (lives > 0)
@@ -178,6 +182,10 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(gameLevels[loadLevel]);
             levelLost = false;
             time = 30.0f; //Reset the timer
+
+            //Reset lists
+            moles.Clear();
+            playerHits.Clear();
         }
         else
         {
@@ -185,22 +193,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //Reload the level after playing the lose animation for the PC
-        
+
+    //Moles are for moles themselves and MoleHoles for the gameobjects holding them. MoleCrafter has the bulk of the script.
     public void initializeMoles()
     {
         sequencing = true;
-        //Moles for moles themselves and MoleHoles for 
-        //For each Mole in the Moles GameObject take them, generate a mole there, give said mole an index, then push it to an array.
-        //Then randomize the order of the array
-        //Then have each of them beep in sequence. Mole will have an event at the end to refer to the nextMole method
-        //In the nextMole method get the next mole in the array, possibly through an int to check the indices
-        //When the last one is done (through a check if) set sequencing to false and the timer may start and the player may move
-        //Do a for loop through the Mole Holes and assign each a random index 
-        //for (mole, moleArray)
-        //{
-
-        //}
+        Debug.Log("Now sequencing");
+       
     } //end initializeMoles()
 
     //Another method, but this time for the player's hits
@@ -215,9 +214,9 @@ public class GameManager : MonoBehaviour
         //Loop thru each item in the array, if there is a mismatch break the loop player loses (restarts) level and loses a life (listed as an attempt)
         //An incomplete array would still be a mismatch?
         //Or only check it after finish? Or, just have it partially check the array
-        for (int i = 0; i < playerHits.Length; i++)
+        for (int i = 0; i < playerHits.Count; i++)
         {
-            if (playerHits[i] != moleArray[i]) //Will only go as far as the player has made hits
+            if (playerHits[i] != moles[i]) //Will only go as far as the player has made hits
             {
                 PlayerCharacter.LoseLevel();
             }
@@ -258,8 +257,11 @@ public class GameManager : MonoBehaviour
             loadLevel = gameLevelsCount - 1; //find the next level in the array
             SceneManager.LoadScene(gameLevels[loadLevel]); //load next level
             time = 30.0f; //Reset the timer
-
-        }else{ //if we have run out of levels go to game over
+            //Reset lists
+            moles.Clear();
+            playerHits.Clear();
+        }
+        else{ //if we have run out of levels go to game over
             GameOver();
         } //end if (gameLevelsCount <=  gameLevels.Length)
 
@@ -274,7 +276,7 @@ public class GameManager : MonoBehaviour
         else
         {
             time -= Time.deltaTime;
-            Debug.Log(time);
+            //Debug.Log(time);
         }
     } //end TimeCheck();
 

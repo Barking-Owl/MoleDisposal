@@ -167,10 +167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTitle: Mole Disposal
-  gameCredits: Made by Andrew Nguyen. Credit for template goes to Professor Akram.
+  gameCredit: 'Made by: Andrew Nguyen'
   copyrightDate: Copyright 2022
-  recordHighScore: 1
-  defaultHighScore: 1000
+  mole: {fileID: 2818542929724036157, guid: 76fcd4293cde5f54fb8f85b391e80369, type: 3}
+  time: 30
+  moleHoleArray: []
+  moleArray: []
+  playerHits: []
+  sequencing: 0
   numberOfLives: 3
   levelLost: 0
   defaultEndMessage: Game Over
