@@ -171,8 +171,7 @@ MonoBehaviour:
   copyrightDate: Copyright 2022
   mole: {fileID: 2818542929724036157, guid: 76fcd4293cde5f54fb8f85b391e80369, type: 3}
   time: 30
-  moleHoleArray: []
-  moleArray: []
+  moles: []
   playerHits: []
   sequencing: 0
   numberOfLives: 3
@@ -186,6 +185,7 @@ MonoBehaviour:
   gameLevels:
   - level_00
   - level_01
+  - level_02
   gameLevelsCount: 0
   nextLevel: 0
   gameState: 0

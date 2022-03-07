@@ -3,9 +3,9 @@
  * Date Created: Feb 28, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 1, 2022
+ * Last Edited: Mar 6, 2022
  * 
- * Description: Manages individual moles. Considering they will be generated 
+ * Description: Manages individual moles. MoleCrafter generates moles
 
  * 
 ****/
@@ -17,80 +17,63 @@ using UnityEngine;
 public class Mole : MonoBehaviour
 {
 
-    //VARIABLES//
+    /*** VARIABLES ***/
     [Header("SET ON AWAKE")]
     public SpriteRenderer sr;
     public Animator animate;
+    public Rigidbody rb;
 
     [Header("SET DYNAMICALLY")]
-    //SET AS ANIMATOR PARAMETERS
     public bool hitCorrect;
     public bool hitIncorrect;
-    public bool emerge;
-    public bool retreat;
     public bool sequencingTurn; //This is in addition to a trigger, so the Mole can go to the idle animation properly
+    public bool endSequence; //Marks the end of an animation, useful for getting the next mole to play without fuss
 
+    /*** METHODS ***/
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         animate = GetComponent<Animator>();
-    }
+        rb = GetComponent<Rigidbody>();
+        endSequence = false;
+    } //end Awake()
+
     // Start is called before the first frame update
     void Start()
     {
         
-    }
+    } //end Start()
 
     // Update is called once per frame
     void Update()
     {
-        if (sequencingTurn)
+
+        if (hitCorrect)
         {
-            animate.SetTrigger("sequencing 0");
-            sequencingTurn = true; //Mole has event to go straight to idle 
-        }
+            animate.SetTrigger("correct");
+        } //end if
 
-        if (emerge)
+        if (hitIncorrect)
         {
-            animate.SetTrigger("levelStart");
-        }
+            animate.SetTrigger("incorrect");
+        } //end if
 
-        if (retreat)
-        {
-            animate.SetTrigger("levelEnd");
-        }
+    } //end Update()
 
-    }
-
-    private void OnCollisionEnter(Collision col)
+    public void EndSequence()
     {
-        //Check if Vivian hit the mole and if she hit the correct one. Likely use of an array? Placeholder code
-
-        GameObject collidedWith = col.gameObject;
-        if (collidedWith.tag == "Player" && PlayerCharacter.attacking == true) 
-        {
-            Debug.Log("Vivian hit the Mole");
-            if (hitCorrect)
-            {
-                animate.SetTrigger("correct");
-            }
-
-            else if (hitIncorrect)
-            {
-                animate.SetTrigger("incorrect");
-            }
-        }
-    }
-
-    private void endSequence ()
-    {
+        Debug.Log("Ending animation");
         sequencingTurn = false;
+        endSequence = true;
         animate.SetBool("sequencing", sequencingTurn); //To transition to idle
-    }
+    } //end EndSequence()
 
     public void SetAnimate()
     {
+        Debug.Log("Starting animation");
         sequencingTurn = true;
-    }
-}
+        animate.SetTrigger("sequencing 0");
+        endSequence = false;
+    } //end SetAnimate()
+} //end Mole class

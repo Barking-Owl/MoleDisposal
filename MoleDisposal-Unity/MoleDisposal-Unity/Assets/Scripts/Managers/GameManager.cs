@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 5, 2022
+ * Last Edited: Mar 6, 2022
  * 
  * Description: Basic GameManager Template
 ****/
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     [Header("GAME SETTINGS")]
 
-    public bool sequencing = false; //This is so the player can't move when the moles are beeping the sequence. By default should be aflse
+    public bool sequencing = false; //This is so the player can't move when the moles are beeping the sequence. By default should be false.
     //static vairables can not be updated in the inspector, however private serialized fileds can be
     [SerializeField] //Access to private variables in editor
     private int numberOfLives; //set number of lives in the inspector
@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey("escape")) { ExitGame(); }
 
         //If Time is up. Just to check timer and update it. SHOULD ONLY COUNT DOWN ONCE GAME STARTED/IS IN LEVEl
-        if (gameStarted) { TimeCheck(); }
+        if (gameStarted && sequencing == false) { TimeCheck(); }
         
         //Check if player's hit moles match. Alternatively, do this when the player hits the moles and not per frame
         //checkMoles();
@@ -153,7 +153,9 @@ public class GameManager : MonoBehaviour
     //LOAD THE GAME FOR THE FIRST TIME OR RESTART
     public void StartGame()
     {
-        //SET ALL GAME LEVEL VARIABLES FOR START OF GAME
+        //SET ALL GAME LEVEL VARIABLES FOR START OF GAME. Considering this is the first level, let's have the "difficulty" be not so high.
+        MoleCrafter.maxMoles = 4; //4 is not too hard. Second level onwards will have eight.
+        time = 30.0f;
 
         gameLevelsCount = 1; //set the count for the game levels
         loadLevel = gameLevelsCount - 1; //the level from the array
@@ -167,7 +169,9 @@ public class GameManager : MonoBehaviour
 
         playerWon = false; //set player winning condition to false
         Debug.Log("Game started");
-        initializeMoles();
+        moles.Clear();
+        playerHits.Clear();
+        InitializeMoles();
         gameStarted = true; //The timer can start. This also will freeze and reset when the player wins or loses.
         
     }//end StartGame()
@@ -186,42 +190,47 @@ public class GameManager : MonoBehaviour
             //Reset lists
             moles.Clear();
             playerHits.Clear();
-        }
+            InitializeMoles();
+            //MoleCrafter.moleSeq = 0; If it doesn't reset after restart
+        } //end if (lives > 0)
         else
         {
             GameOver();
-        }
-    }
+        } //end else
+    } //end LoseALife()
 
 
     //Moles are for moles themselves and MoleHoles for the gameobjects holding them. MoleCrafter has the bulk of the script.
-    public void initializeMoles()
+    public void InitializeMoles()
     {
         sequencing = true;
         Debug.Log("Now sequencing");
        
     } //end initializeMoles()
 
-    //Another method, but this time for the player's hits
-    //public void playerHits()
-    //{
-
-    //}
-
     //Check if the contents of playerHits matches that of the first moles
     public void CheckMoles()
     {
-        //Loop thru each item in the array, if there is a mismatch break the loop player loses (restarts) level and loses a life (listed as an attempt)
-        //An incomplete array would still be a mismatch?
-        //Or only check it after finish? Or, just have it partially check the array
         for (int i = 0; i < playerHits.Count; i++)
         {
+            //Assume the player correctly hit
+            playerHits[i].GetComponent<Mole>().hitCorrect = true;
+
             if (playerHits[i] != moles[i]) //Will only go as far as the player has made hits
             {
                 PlayerCharacter.LoseLevel();
-            }
-        }
-    }
+                playerHits[i].GetComponent<Mole>().hitCorrect = false;
+                playerHits[i].GetComponent<Mole>().hitIncorrect = true; //Correct them if it isn't
+            } //end if (playerHits[i] != moles[i])
+
+            if (playerHits.Count == moles.Count && playerHits[i] == moles[i])
+            {
+                PlayerCharacter.WinLevel();
+            } //end if (playerHits.Count == moles.Count && playerHits[i] == moles[i])
+        } //end for loop
+
+
+    } //end CheckMoles()
 
     //EXIT THE GAME
     public void ExitGame()
@@ -246,22 +255,36 @@ public class GameManager : MonoBehaviour
     
     
     //GO TO THE NEXT LEVEL
-    void NextLevel()
+    public void NextLevel()
     {
         nextLevel = false; //reset the next level
 
         //as long as our level count is not more than the amount of levels
         if (gameLevelsCount < gameLevels.Length)
         {
+            playerWon = false;
             gameLevelsCount++; //add to level count for next level
             loadLevel = gameLevelsCount - 1; //find the next level in the array
             SceneManager.LoadScene(gameLevels[loadLevel]); //load next level
+
+            if (MoleCrafter.maxMoles < 8)
+            {
+                MoleCrafter.maxMoles = MoleCrafter.maxMoles + 2;
+            } //end (if MoleCrafter.maxMoles < 8)
+            else
+            {
+                MoleCrafter.maxMoles = 8;
+            } //end else
             time = 30.0f; //Reset the timer
             //Reset lists
             moles.Clear();
             playerHits.Clear();
-        }
+            InitializeMoles();
+
+        } //end (if gameLevelsCount < gameLevels.Length)
+
         else{ //if we have run out of levels go to game over
+            playerWon = true;
             GameOver();
         } //end if (gameLevelsCount <=  gameLevels.Length)
 
@@ -272,12 +295,11 @@ public class GameManager : MonoBehaviour
         if (time <= 0) {
             playerWon = false;
             PlayerCharacter.LoseLevel();
-        }
+        } //end if
         else
         {
             time -= Time.deltaTime;
-            //Debug.Log(time);
-        }
+        } //end else
     } //end TimeCheck();
 
 

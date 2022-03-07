@@ -2,8 +2,8 @@
  * Created by: Akram Taghavi-Burrs
  * Date Created: Feb 23, 2022
  * 
- * Last Edited by: NA
- * Last Edited: Feb 23, 2022
+ * Last Edited by: Andrew Nguyen
+ * Last Edited: Mar 6, 2022
  * 
  * Description: Updates end canvas refencing game manger
 ****/
@@ -22,7 +22,7 @@ public class EndCanvas : MonoBehaviour
     [Header("Canvas SETTINGS")]
     public Text endMsgTextbox; //textbox for the title
 
-
+    /*** METHODS ***/
     private void Start()
     {
         gm = GameManager.GM; //find the game manager
@@ -32,18 +32,15 @@ public class EndCanvas : MonoBehaviour
         //Set the Canvas text from GM reference
         endMsgTextbox.text = gm.endMsg;
 
-    }
+    } //end Start()
 
     public void GameRestart()
     {
         gm.StartGame(); //refenece the StartGame method on the game manager
-
-    }
+    } //end GameRestart()
 
     public void GameExit()
     {
         gm.ExitGame(); //refenece the ExitGame method on the game manager
-
-    }
-
-}
+    } //end GameExit()
+} //end EndCanvas class

@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 2, 2022
+ * Last Edited: Mar 6, 2022
  * 
  * Description: Updates HUD canvas referecing game manager
 ****/
@@ -29,6 +29,8 @@ public class HUDCanvas : MonoBehaviour
     private int totalLevels;
     private int lives;
     private float timelimit;
+
+    /*** METHODS ***/
 
     private void Start()
     {
@@ -72,5 +74,5 @@ public class HUDCanvas : MonoBehaviour
     void DisplayTime()
     {
         timelimit = Mathf.FloorToInt(timelimit % 60);
-    }
+    }//end DisplayTime()
 }

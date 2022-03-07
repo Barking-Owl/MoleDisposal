@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 2, 2022
+ * Last Edited: Mar 6, 2022
  * 
  * Description: Updates start canvas referecing game manager
 ****/
@@ -24,6 +24,7 @@ public class StartCanvas : MonoBehaviour
     public Text creditsTextbox; //textbox for the credits
     public Text copyrightTextbox; //textbox for the copyright
 
+    /*** METHODS ***/
     private void Start()
     {
          gm = GameManager.GM; //find the game manager
@@ -32,7 +33,7 @@ public class StartCanvas : MonoBehaviour
          titleTextbox.text = gm.gameTitle; 
          creditsTextbox.text = gm.gameCredit;
          copyrightTextbox.text = gm.copyrightDate;
-    }
+    } //end Start()
 
 
 
@@ -40,12 +41,12 @@ public class StartCanvas : MonoBehaviour
     {
         gm.StartGame(); //refenece the StartGame method on the game manager
 
-    }
+    } //end GameStart()
 
    public void GameExit()
     {
         gm.ExitGame(); //refenece the ExitGame method on the game manager
 
-    }
+    } //end GameExit()
 
 }
