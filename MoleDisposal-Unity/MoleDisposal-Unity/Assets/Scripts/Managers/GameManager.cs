@@ -3,9 +3,9 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 6, 2022
+ * Last Edited: Mar 7, 2022
  * 
- * Description: Basic GameManager Template
+ * Description: GameManager for Mole Disposal game
 ****/
 
 /** Import Libraries **/
@@ -19,6 +19,7 @@ using UnityEngine.SceneManagement; //libraries for accessing scenes
 public class GameManager : MonoBehaviour
 {
     /*** VARIABLES ***/
+    //Keep track of best time? Or, the more time that remains the higher the score is added?
 
     #region GameManager Singleton
     static private GameManager gm; //refence GameManager
@@ -46,6 +47,8 @@ public class GameManager : MonoBehaviour
     [Header("GENERAL SETTINGS")]
     public string gameTitle = "Mole Disposal";  //name of the game
     public string gameCredit = "Made by: Andrew Nguyen"; //Game creator
+    public string gameHelpText = "Help Vivian beat back the moles! Use arrow keys or WASD to move her around and the left mouse button to attack when next to a mole. You must attack in the order displayed at the beginning of the level - but good thing you get three tries! The sequence gets harder as levels goes on.";
+    public string helpTitle = "How to Play";
     public string copyrightDate = "Copyright " + thisDay; //date cretaed
     public GameObject mole;
     public float time = 30.0f; //Time. This is set dynamically at least on initial concept doc, but that feature may be cut. By default it's 30
@@ -59,9 +62,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] //Access to private variables in editor
     private int numberOfLives; //set number of lives in the inspector
     static public int lives; // number of lives for player 
-    public int Lives { get { return lives; } set { lives = value; } }//access to private variable died [get/set methods]
+    public int Lives { get { return lives; } set { lives = value; } }//access to private variable lives [get/set methods]
+
+    static public int score; //score value. Calculated with the time remaining and how many moles were there. More moles means more points.
+    public int Score { get { return score; } set { score = value; } } //access to private variable score [get/set methods]
+
+    [Space(10)]
 
     [SerializeField] //Access to private variables in editor
+    static public int highScore = 0; //Default high score
+    public int HighScore { get { return highScore; } set { highScore = value; } } //access to private variable highScore [get/set methods]
+
+    [Space(10)]
+
     [Tooltip("Check to test player lost the level")]
     private bool levelLost = false;//we have lost the level (ie. player died)
     public bool LevelLost { get { return levelLost; } set { levelLost = value; } } //access to private variable lostLevel [get/set methods]
@@ -78,6 +91,9 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("Name of the game over scene")]
     public string gameOverScene;
+
+    [Tooltip("Name of the Help Scene")]
+    public string helpScene;
 
     [Tooltip("Count and name of each Game Level (scene)")]
     public string[] gameLevels; //names of levels
@@ -120,12 +136,16 @@ public class GameManager : MonoBehaviour
 
         moles = new List<GameObject>();
         playerHits = new List<GameObject>();
+
+        GetHighScore();
         
     }//end Awake()
 
     // Update is called once per frame
     private void Update()
     {
+        CheckScore();
+        
         //if ESC is pressed , exit game
         if (Input.GetKey("escape")) { ExitGame(); }
 
@@ -147,13 +167,27 @@ public class GameManager : MonoBehaviour
         }//end if (gameState == gameStates.Playing)
 
 
+
     }//end Update
 
+    //Load the Help Screen
+    public void GoHelp()
+    {
+        SceneManager.LoadScene(helpScene);
+    } //end GoHelp()
+
+    //Go back to menu
+    public void GoBack()
+    {
+        SceneManager.LoadScene(startScene);
+    }
 
     //LOAD THE GAME FOR THE FIRST TIME OR RESTART
     public void StartGame()
     {
         //SET ALL GAME LEVEL VARIABLES FOR START OF GAME. Considering this is the first level, let's have the "difficulty" be not so high.
+        score = 0; //Set starting score
+
         MoleCrafter.maxMoles = 4; //4 is not too hard. Second level onwards will have eight.
         time = 30.0f;
 
@@ -251,13 +285,16 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene(gameOverScene); //load the game over scene
         Debug.Log("Gameover");
-    }
+    } //end GameOver()
     
     
     //GO TO THE NEXT LEVEL
     public void NextLevel()
     {
         nextLevel = false; //reset the next level
+        score = 10*(Mathf.FloorToInt(time % 60)) + (100 * MoleCrafter.maxMoles); //Add score ONLY if player has won. It also goes up with number of moles
+        CheckScore();
+        Debug.Log("High Score: " + highScore);
 
         //as long as our level count is not more than the amount of levels
         if (gameLevelsCount < gameLevels.Length)
@@ -283,7 +320,7 @@ public class GameManager : MonoBehaviour
 
         } //end (if gameLevelsCount < gameLevels.Length)
 
-        else{ //if we have run out of levels go to game over
+        else{ //if we have run out of levels go to game over. Clearly in this case, the player has won the game.
             playerWon = true;
             GameOver();
         } //end if (gameLevelsCount <=  gameLevels.Length)
@@ -302,6 +339,26 @@ public class GameManager : MonoBehaviour
         } //end else
     } //end TimeCheck();
 
+    void CheckScore()
+    { //Checks score on update and compares it to the high score
+        if (score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore); //Set playerPrefs
+        } //end if
+    } //end CheckScore()
+
+    void GetHighScore() 
+    {
+        //If PlayerPrefs already has a HighScore get that
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            Debug.Log("We already have a high score");
+            highScore = PlayerPrefs.GetInt("High Score"); //Set high score to that
+        } //end if
+
+        PlayerPrefs.SetInt("HighScore", highScore); 
+    } //end GetHighScore()
 
 
 }

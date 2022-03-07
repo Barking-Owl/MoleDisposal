@@ -3,7 +3,7 @@
  * Date Created: Feb 27, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 6, 2022
+ * Last Edited: Mar 7, 2022
  * 
  * Description: Manages Vivian and her hammer
 ****/
@@ -67,7 +67,7 @@ public class PlayerCharacter : MonoBehaviour
         else if (!attacking || !gm.sequencing)
         {
             canMove = true;
-        } //end else
+        } //end else if
 
         if (canMove)
         {
