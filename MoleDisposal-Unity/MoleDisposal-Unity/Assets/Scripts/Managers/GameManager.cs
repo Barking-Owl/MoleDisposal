@@ -19,7 +19,6 @@ using UnityEngine.SceneManagement; //libraries for accessing scenes
 public class GameManager : MonoBehaviour
 {
     /*** VARIABLES ***/
-    //Keep track of best time? Or, the more time that remains the higher the score is added?
 
     #region GameManager Singleton
     static private GameManager gm; //refence GameManager
@@ -51,9 +50,12 @@ public class GameManager : MonoBehaviour
     public string helpTitle = "How to Play";
     public string copyrightDate = "Copyright " + thisDay; //date cretaed
     public GameObject mole;
-    public float time = 30.0f; //Time. This is set dynamically at least on initial concept doc, but that feature may be cut. By default it's 30
+    public float time = 35.0f; //Time. This is set dynamically at least on initial concept doc, but that feature may be cut. By default it's 30
     public List<GameObject> moles; 
     public List<GameObject> playerHits; //The player's hits
+
+    //Test HighScore ONLY
+    public static int testHS = 1500;
 
     [Header("GAME SETTINGS")]
 
@@ -70,7 +72,7 @@ public class GameManager : MonoBehaviour
     [Space(10)]
 
     [SerializeField] //Access to private variables in editor
-    static public int highScore = 0; //Default high score
+    static public int highScore; //Default high score
     public int HighScore { get { return highScore; } set { highScore = value; } } //access to private variable highScore [get/set methods]
 
     [Space(10)]
@@ -127,6 +129,12 @@ public class GameManager : MonoBehaviour
     //Awake is called when the game loads (before Start).  Awake only once during the lifetime of the script instance.
     void Awake()
     {
+        if (highScore <= 0)
+        {
+            highScore = 0;
+        }
+
+        //PlayerPrefs.SetInt("HighScore", testHS); TEST HS
         //runs the method to check for the GameManager
         CheckGameManagerIsInScene();
 
@@ -144,7 +152,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        CheckScore();
         
         //if ESC is pressed , exit game
         if (Input.GetKey("escape")) { ExitGame(); }
@@ -185,11 +192,12 @@ public class GameManager : MonoBehaviour
     //LOAD THE GAME FOR THE FIRST TIME OR RESTART
     public void StartGame()
     {
+        CheckScore();
         //SET ALL GAME LEVEL VARIABLES FOR START OF GAME. Considering this is the first level, let's have the "difficulty" be not so high.
         score = 0; //Set starting score
 
         MoleCrafter.maxMoles = 4; //4 is not too hard. Second level onwards will have eight.
-        time = 30.0f;
+        time = 35.0f;
 
         gameLevelsCount = 1; //set the count for the game levels
         loadLevel = gameLevelsCount - 1; //the level from the array
@@ -292,9 +300,11 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         nextLevel = false; //reset the next level
-        score = 10*(Mathf.FloorToInt(time % 60)) + (100 * MoleCrafter.maxMoles); //Add score ONLY if player has won. It also goes up with number of moles
+        score = score + (10*(Mathf.FloorToInt(time % 60)) + (100*MoleCrafter.maxMoles) + gameLevelsCount); //Add score ONLY if player has won. It also goes up with number of moles
+
         CheckScore();
         Debug.Log("High Score: " + highScore);
+        Debug.Log("High Score: " + PlayerPrefs.GetInt("HighScore"));
 
         //as long as our level count is not more than the amount of levels
         if (gameLevelsCount < gameLevels.Length)
@@ -312,7 +322,7 @@ public class GameManager : MonoBehaviour
             {
                 MoleCrafter.maxMoles = 8;
             } //end else
-            time = 30.0f; //Reset the timer
+            time = 35.0f; //Reset the timer
             //Reset lists
             moles.Clear();
             playerHits.Clear();
@@ -344,8 +354,11 @@ public class GameManager : MonoBehaviour
         if (score > highScore)
         {
             highScore = score;
+
             PlayerPrefs.SetInt("HighScore", highScore); //Set playerPrefs
         } //end if
+
+        PlayerPrefs.Save();
     } //end CheckScore()
 
     void GetHighScore() 
@@ -353,11 +366,16 @@ public class GameManager : MonoBehaviour
         //If PlayerPrefs already has a HighScore get that
         if (PlayerPrefs.HasKey("HighScore"))
         {
-            Debug.Log("We already have a high score");
-            highScore = PlayerPrefs.GetInt("High Score"); //Set high score to that
+            Debug.Log("We already have a high score: " + PlayerPrefs.GetInt("HighScore"));
+            if (PlayerPrefs.GetInt("High Score") > highScore)
+            {
+                highScore = PlayerPrefs.GetInt("High Score"); //Set high score to that
+            }
+            highScore = PlayerPrefs.GetInt("HighScore");
         } //end if
 
-        PlayerPrefs.SetInt("HighScore", highScore); 
+        PlayerPrefs.SetInt("HighScore", highScore);
+        PlayerPrefs.Save();
     } //end GetHighScore()
 
 

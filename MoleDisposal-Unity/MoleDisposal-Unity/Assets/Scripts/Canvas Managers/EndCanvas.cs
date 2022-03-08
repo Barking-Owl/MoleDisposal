@@ -45,13 +45,27 @@ public class EndCanvas : MonoBehaviour
         SetHUD();
     } //end Start()
 
+    // Update is called once per frame
+    void Update()
+    {
+        GetGameStats();
+        SetHUD();
+    }//end Update()
+
     void SetHUD()
     {
         //if textbox exists update value
         if (scoreTextbox) { scoreTextbox.text = "Your Score: " + score; }
         if (highScoreTextbox) { highScoreTextbox.text = "Your High Score: " + highscore; }
 
-    }//end SetHUD()
+    } //end SetHUD()
+
+    void GetGameStats()
+    {
+        score = gm.Score;
+        highscore = gm.HighScore;
+    } //end GetGameStats()
+
     public void GameRestart()
     {
         gm.StartGame(); //refenece the StartGame method on the game manager
