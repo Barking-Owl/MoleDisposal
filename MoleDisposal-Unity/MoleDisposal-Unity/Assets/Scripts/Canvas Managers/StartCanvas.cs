@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 7, 2022
+ * Last Edited: Mar 11, 2022
  * 
  * Description: Updates start canvas referecing game manager
 ****/
@@ -48,10 +48,11 @@ public class StartCanvas : MonoBehaviour
         gm.GoHelp();
     } //end GoHelp()
 
+    /*
    public void GameExit()
     {
         gm.ExitGame(); //refenece the ExitGame method on the game manager
 
     } //end GameExit()
-
+    */
 }

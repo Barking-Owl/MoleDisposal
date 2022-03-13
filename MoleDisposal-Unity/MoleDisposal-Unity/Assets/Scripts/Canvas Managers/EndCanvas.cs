@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 7, 2022
+ * Last Edited: Mar 11, 2022
  * 
  * Description: Updates end canvas refencing game manger
 ****/
@@ -71,8 +71,10 @@ public class EndCanvas : MonoBehaviour
         gm.StartGame(); //refenece the StartGame method on the game manager
     } //end GameRestart()
 
+    /*
     public void GameExit()
     {
         gm.ExitGame(); //refenece the ExitGame method on the game manager
-    } //end GameExit()
+    } //end GameExit() 
+    */
 } //end EndCanvas class

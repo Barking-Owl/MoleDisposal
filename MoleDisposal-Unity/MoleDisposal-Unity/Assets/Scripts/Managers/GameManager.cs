@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 7, 2022
+ * Last Edited: Mar 11, 2022
  * 
  * Description: GameManager for Mole Disposal game
 ****/
@@ -153,8 +153,8 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         
-        //if ESC is pressed , exit game
-        if (Input.GetKey("escape")) { ExitGame(); }
+        //if ESC is pressed , exit game. Since we're doing a webGL build, a browser game, this is unnecesary.
+        //if (Input.GetKey("escape")) { ExitGame(); }
 
         //If Time is up. Just to check timer and update it. SHOULD ONLY COUNT DOWN ONCE GAME STARTED/IS IN LEVEl
         if (gameStarted && sequencing == false) { TimeCheck(); }
@@ -274,12 +274,14 @@ public class GameManager : MonoBehaviour
 
     } //end CheckMoles()
 
+    /*
     //EXIT THE GAME
     public void ExitGame()
     {
         Application.Quit();
         Debug.Log("Exited Game");
-    }//end ExitGame()
+    }//end ExitGame() 
+    */
 
 
     //GO TO THE GAME OVER SCENE
