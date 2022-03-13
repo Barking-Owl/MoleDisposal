@@ -21,6 +21,8 @@ public class EndCanvas : MonoBehaviour
 
     public Text scoreTextbox; //textbox for score
     public Text highScoreTextbox; //textbox for best score
+    public Text creditsTextbox; //textbox for the credits
+    public Text copyrightTextbox; //textbox for the copyright
 
     //GM data
     private int score;
@@ -41,7 +43,8 @@ public class EndCanvas : MonoBehaviour
 
         //Set the Canvas text from GM reference
         endMsgTextbox.text = gm.endMsg;
-
+        creditsTextbox.text = gm.gameCredit;
+        copyrightTextbox.text = gm.copyrightYear;
         SetHUD();
     } //end Start()
 

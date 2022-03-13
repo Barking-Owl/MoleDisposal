@@ -394,6 +394,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreTextbox: {fileID: 1687260446}
   highScoreTextbox: {fileID: 48029254}
+  creditsTextbox: {fileID: 1325284405}
+  copyrightTextbox: {fileID: 1929308369}
   endMsgTextbox: {fileID: 1603986571}
 --- !u!1 &705507993
 GameObject:

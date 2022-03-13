@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 11, 2022
+ * Last Edited: Mar 12, 2022
  * 
  * Description: Updates start canvas referecing game manager
 ****/
@@ -32,7 +32,7 @@ public class StartCanvas : MonoBehaviour
          //Set the Canvas text from GM reference
          titleTextbox.text = gm.gameTitle; 
          creditsTextbox.text = gm.gameCredit;
-         copyrightTextbox.text = gm.copyrightDate;
+         copyrightTextbox.text = gm.copyrightYear;
     } //end Start()
 
 

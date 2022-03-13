@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Andrew Nguyen
- * Last Edited: Mar 11, 2022
+ * Last Edited: Mar 12, 2022
  * 
  * Description: GameManager for Mole Disposal game
 ****/
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     public string gameCredit = "Made by: Andrew Nguyen"; //Game creator
     public string gameHelpText = "Help Vivian beat back the moles! Use arrow keys or WASD to move her around and the left mouse button to attack when next to a mole. You must attack in the order displayed at the beginning of the level - but good thing you get three tries! The sequence gets harder as levels goes on.";
     public string helpTitle = "How to Play";
-    public string copyrightDate = "Copyright " + thisDay; //date cretaed
+    public string copyrightYear = "Copyright © " + thisDay; //date cretaed
     public GameObject mole;
     public float time = 35.0f; //Time. This is set dynamically at least on initial concept doc, but that feature may be cut. By default it's 30
     public List<GameObject> moles; 
